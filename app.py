@@ -23,5 +23,13 @@ def predict_api():
     print(output[0])
     return jsonify(int(output[0]))
 
+@app.route('/predict', methods = ['POST'])
+def predict():
+    data = [float(x) for x in request.form.values()] # running loop for every value inside this request.form convert into float and finally to get in form of list format
+    final_input = scaler.transform(np.array(data).reshape(1,-1))
+    print(final_input)
+    output = model.predict(final_input)[0]
+    return render_template("home.html",prediction_text = "The cancer prediction is {}".format(output))
+
 if __name__ == "__main__":
     app.run(debug=True)

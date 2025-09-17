@@ -1,4 +1,62 @@
-<h1>
+<!DOCTYPE html>
+<html >
 
-Hello World
-</h1>
+<head>
+  <meta charset="UTF-8">
+  <title>Breast Cancer Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Breast Cancer Prediction</h1>
+
+         <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="mean_radius" placeholder="mean_radius" required="required" /><br>
+    	<input type="text" name="mean_texture" placeholder="mean_texture" required="required" /><br>
+        <input type="text" name="mean_perimeter" placeholder="mean_perimeter" required="required" /><br>
+        <input type="text" name="mean_area" placeholder="mean_area" required="required" /><br>
+        <input type="text" name="mean_smoothness" placeholder="mean_smoothness" required="required" /><br>
+        <input type="text" name="mean_compactness" placeholder="mean_compactness" required="required" /><br>
+        <input type="text" name="mean_concavity" placeholder="mean_concavity" required="required" /><br>
+        <input type="text" name="mean_concave_points" placeholder="mean_concave_points" required="required" /><br>
+        <input type="text" name="mean_symmetry" placeholder="mean_symmetry" required="required" /><br>
+        <input type="text" name="mean_fractal_dimension" placeholder="mean_fractal_dimension" required="required" /><br>
+        <input type="text" name="radius_error" placeholder="radius_error" required="required" /><br>
+        <input type="text" name="texture_error" placeholder="texture_error" required="required" /><br>
+        <input type="text" name="perimeter_error" placeholder="perimeter_error" required="required" /><br>
+        <input type="text" name="area_error" placeholder="area_error" required="required" /><br>
+        <input type="text" name="smoothness_error" placeholder="smoothness_error" required="required" /><br>
+        <input type="text" name="compactness_error" placeholder="compactness_error" required="required" /><br>
+        <input type="text" name="concavity_error" placeholder="concavity_error" required="required" /><br>
+        <input type="text" name="concave_points_error" placeholder="concave_points_error" required="required" /><br>
+        <input type="text" name="symmetry_error" placeholder="symmetry_error" required="required" /><br>
+        <input type="text" name="fractal_dimension_error" placeholder="fractal_dimension_error" required="required" /><br>
+        <input type="text" name="worst_radius" placeholder="worst_radius" required="required" /><br>
+        <input type="text" name="worst_texture" placeholder="worst_texture" required="required" /><br>
+        <input type="text" name="worst_perimeter" placeholder="worst_perimeter" required="required" /><br>
+        <input type="text" name="worst_area" placeholder="worst_area" required="required" /><br>
+        <input type="text" name="worst_smoothness" placeholder="worst_smoothness" required="required" /><br>
+        <input type="text" name="worst_compactness" placeholder="worst_compactness" required="required" /><br>
+        <input type="text" name="worst_concavity" placeholder="worst_concavity" required="required" /><br>
+        <input type="text" name="worst_concave_points" placeholder="worst_concave_points" required="required" /><br>
+        <input type="text" name="worst_symmetry" placeholder="worst_symmetry" required="required" /><br>
+        <input type="text" name="worst_fractal_dimension" placeholder="worst_fractal_dimension" required="required" /><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
